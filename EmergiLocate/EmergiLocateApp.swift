@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct EmergiLocateApp: App {
+    var webSocketManager: WebSocketManager = WebSocketManager()
+    var showEmergencyAlert = false
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(webSocketManager)
+                //.environmentObject(showEmergencyAlert)
         }
     }
 }

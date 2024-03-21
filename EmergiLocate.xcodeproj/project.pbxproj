@@ -11,6 +11,13 @@
 		3A453D592BAC22EF006CF68A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453D582BAC22EF006CF68A /* ContentView.swift */; };
 		3A453D5B2BAC22F1006CF68A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A453D5A2BAC22F1006CF68A /* Assets.xcassets */; };
 		3A453D5E2BAC22F1006CF68A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A453D5D2BAC22F1006CF68A /* Preview Assets.xcassets */; };
+		3A453D682BAC25D3006CF68A /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453D672BAC25D3006CF68A /* SOSView.swift */; };
+		3A453D6A2BAC2B66006CF68A /* WaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453D692BAC2B66006CF68A /* WaitView.swift */; };
+		3A453D6C2BAC33E5006CF68A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453D6B2BAC33E5006CF68A /* DetailView.swift */; };
+		3A453D6E2BAC4F16006CF68A /* HelpComingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453D6D2BAC4F16006CF68A /* HelpComingView.swift */; };
+		3A453D712BAC6911006CF68A /* ServerCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453D702BAC6911006CF68A /* ServerCom.swift */; };
+		3A453D742BAC6A2C006CF68A /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 3A453D732BAC6A2C006CF68A /* Starscream */; };
+		3A453D772BAC703B006CF68A /* EmergencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453D762BAC703B006CF68A /* EmergencyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		3A453D582BAC22EF006CF68A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A453D5A2BAC22F1006CF68A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A453D5D2BAC22F1006CF68A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A453D672BAC25D3006CF68A /* SOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSView.swift; sourceTree = "<group>"; };
+		3A453D692BAC2B66006CF68A /* WaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitView.swift; sourceTree = "<group>"; };
+		3A453D6B2BAC33E5006CF68A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3A453D6D2BAC4F16006CF68A /* HelpComingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpComingView.swift; sourceTree = "<group>"; };
+		3A453D702BAC6911006CF68A /* ServerCom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCom.swift; sourceTree = "<group>"; };
+		3A453D752BAC6B8A006CF68A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3A453D762BAC703B006CF68A /* EmergencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A453D742BAC6A2C006CF68A /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +66,8 @@
 		3A453D552BAC22EF006CF68A /* EmergiLocate */ = {
 			isa = PBXGroup;
 			children = (
+				3A453D752BAC6B8A006CF68A /* Info.plist */,
+				3A453D6F2BAC68F9006CF68A /* Coms */,
 				3A453D652BAC252B006CF68A /* EmergencyNotification */,
 				3A453D642BAC251C006CF68A /* EmergencyCall */,
 				3A453D562BAC22EF006CF68A /* EmergiLocateApp.swift */,
@@ -80,6 +97,7 @@
 		3A453D652BAC252B006CF68A /* EmergencyNotification */ = {
 			isa = PBXGroup;
 			children = (
+				3A453D762BAC703B006CF68A /* EmergencyView.swift */,
 			);
 			path = EmergencyNotification;
 			sourceTree = "<group>";
@@ -87,8 +105,20 @@
 		3A453D662BAC253D006CF68A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A453D672BAC25D3006CF68A /* SOSView.swift */,
+				3A453D692BAC2B66006CF68A /* WaitView.swift */,
+				3A453D6B2BAC33E5006CF68A /* DetailView.swift */,
+				3A453D6D2BAC4F16006CF68A /* HelpComingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3A453D6F2BAC68F9006CF68A /* Coms */ = {
+			isa = PBXGroup;
+			children = (
+				3A453D702BAC6911006CF68A /* ServerCom.swift */,
+			);
+			path = Coms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +137,9 @@
 			dependencies = (
 			);
 			name = EmergiLocate;
+			packageProductDependencies = (
+				3A453D732BAC6A2C006CF68A /* Starscream */,
+			);
 			productName = EmergiLocate;
 			productReference = 3A453D532BAC22EF006CF68A /* EmergiLocate.app */;
 			productType = "com.apple.product-type.application";
@@ -135,6 +168,9 @@
 				Base,
 			);
 			mainGroup = 3A453D4A2BAC22EF006CF68A;
+			packageReferences = (
+				3A453D722BAC6A2C006CF68A /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = 3A453D542BAC22EF006CF68A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -161,7 +197,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A453D772BAC703B006CF68A /* EmergencyView.swift in Sources */,
+				3A453D712BAC6911006CF68A /* ServerCom.swift in Sources */,
+				3A453D682BAC25D3006CF68A /* SOSView.swift in Sources */,
+				3A453D6A2BAC2B66006CF68A /* WaitView.swift in Sources */,
+				3A453D6E2BAC4F16006CF68A /* HelpComingView.swift in Sources */,
 				3A453D592BAC22EF006CF68A /* ContentView.swift in Sources */,
+				3A453D6C2BAC33E5006CF68A /* DetailView.swift in Sources */,
 				3A453D572BAC22EF006CF68A /* EmergiLocateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +341,7 @@
 				DEVELOPMENT_TEAM = SVSHDX7X7B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EmergiLocate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -328,6 +371,7 @@
 				DEVELOPMENT_TEAM = SVSHDX7X7B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EmergiLocate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -368,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A453D722BAC6A2C006CF68A /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A453D732BAC6A2C006CF68A /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A453D722BAC6A2C006CF68A /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A453D4B2BAC22EF006CF68A /* Project object */;
 }
