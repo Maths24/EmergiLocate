@@ -14,7 +14,7 @@ class WebSocketManager: ObservableObject, WebSocketDelegate {
         socket.delegate = self
         socket.connect()
         print(getIPAddress())
-        scheduleNotification()
+        scheduleNotification(type: "FIRE", floor: "Room B41", room: "Floor 3")
     }
     func getIPAddress() -> String? {
         var address: String?
@@ -82,6 +82,7 @@ class WebSocketManager: ObservableObject, WebSocketDelegate {
             DispatchQueue.main.async {
                 print("Websocket is disconnected: \(reason)")
             }
+            self.socket.connect()
         case .text(let string):
             
             do {
@@ -90,7 +91,7 @@ class WebSocketManager: ObservableObject, WebSocketDelegate {
                     DispatchQueue.main.async {
                         self.receivedObject = myObject
                         print(self.receivedObject?.FLOOR)
-                        self.scheduleNotification()
+                        self.scheduleNotification(type: self.receivedObject?.TYPE ?? "Emergency", floor: self.receivedObject?.FLOOR ?? "N/A", room: self.receivedObject?.ROOM ?? "N/A")
                         self.show = true
                     }
                 }
@@ -106,27 +107,55 @@ class WebSocketManager: ObservableObject, WebSocketDelegate {
         }
     }
     
-    func scheduleNotification() {
+    func scheduleNotification(type: String, floor: String, room: String) {
         let content = UNMutableNotificationContent()
-        content.title = "Feed the cat"
-        content.subtitle = "It looks hungry"
-        content.body = "iodsfgahfdiog"
+        
+        content.title = "⚠️ Emergency Alert: \(type) ⚠️"
+        content.subtitle = "\(floor), \(room)"
+        content.body = "Evacuate immediately using the nearest exit. Do not use elevators. Click here for the nearest exit route."
         content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
 
+
+        dateComponents.weekday = 5  // Tuesday
+        dateComponents.hour = 20 // 14:00 hours
+        dateComponents.minute = 8
+           
+        // Create the trigger as a repeating event.
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        //let trigger = UNCalendarNotificationTrigger(
+          //       dateMatching: dateComponents, repeats: true)
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+
+
+        // Schedule the request with the system.
+        let notificationCenter = UNUserNotificationCenter.current()
+        do {
+            try  notificationCenter.add(request)
+        } catch {
+            // Handle errors that may occur during add.
+        }
         // show this notification five seconds from now
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+       /* let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+        
+        
+
 
         // choose a random identifier
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
 
         // add our notification request
-         UNUserNotificationCenter.current().add(request) { error in
+        UNUserNotificationCenter.current(). .add(request) { error in
              if let error = error {
                  print("Error scheduling notification: \(error.localizedDescription)")
              } else {
                  print("Notification scheduled successfully")
              }
-         }
+         }*/
         let center = UNUserNotificationCenter.current()
         center.getPendingNotificationRequests(completionHandler: { requests in
             for request in requests {

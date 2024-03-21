@@ -46,8 +46,12 @@ struct ContentView: View  {
                 }*/
                 
             }.sheet(isPresented: $webSocketManager.show, content: {
-                EmptyView()
+                EmergencyView()
             })
+            .onAppear {
+                webSocketManager.send(message: "ping")
+                
+            }
         }
     }
     
